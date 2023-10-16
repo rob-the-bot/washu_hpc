@@ -35,7 +35,6 @@ dependencies:
 - tqdm
 - yapf
 - z5py >= 2.0.15
-- keras
 - shapely
 - cvxpy
 - natsort
@@ -70,3 +69,4 @@ dependencies:
   - antspyx
   - nd2
   - tensorflow-cpu
+  - https://github.com/flatironinstitute/CaImAn/archive/refs/tags/v1.9.16.zip

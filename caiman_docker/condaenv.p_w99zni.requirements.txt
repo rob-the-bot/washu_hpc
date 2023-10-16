@@ -1,3 +1,0 @@
-antspyx
-nd2
-tensorflow

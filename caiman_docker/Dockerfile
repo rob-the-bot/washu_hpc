@@ -11,16 +11,12 @@ RUN apt install -y htop vim nano tmux git rsync wget
 # install packages which makes downloading (from collaborators) faster
 RUN apt install -y aria2
 
-ENV PATH="/opt/conda/bin:${PATH}"
-ARG PATH="/opt/conda/bin:${PATH}"
-
+# conda stuff
 RUN conda config --set always_yes yes
-RUN conda update --yes conda
-
 # create caiman env
 RUN conda remove -n caiman --all
 # install packages
 RUN wget https://raw.githubusercontent.com/rob-the-bot/washu_hpc/main/caiman_docker/environment.yml
-RUN conda env create -f environment.yml
+RUN mamba env create -f environment.yml
 # Make RUN commands use the new environment:
 SHELL ["conda", "run", "-n", "caiman", "/bin/bash", "-c"]
