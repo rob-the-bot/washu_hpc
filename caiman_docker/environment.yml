@@ -1,0 +1,38 @@
+name: caiman
+channels:
+- conda-forge
+dependencies:
+- caiman
+- shapely
+- cvxpy
+- natsort
+- seaborn
+- ffmpeg-python
+- python-igraph
+- jupyterlab
+- jupyterlab-git
+- nd2reader
+- chart-studio
+- plotly
+- pytables
+- openpyxl
+- jupyterlab_code_formatter
+- black
+- isort
+- pynrrd
+- lmfit
+- numba
+- llvmlite
+- autograd 
+- oasis-deconv
+- nibabel
+- webcolors
+- scikit-spatial
+- emcee
+- dtw-python
+- dtaidistance
+- pip
+
+- pip:
+  - antspyx
+  - nd2
