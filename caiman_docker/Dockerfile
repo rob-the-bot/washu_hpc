@@ -1,21 +1,26 @@
-FROM d0ckaaa/ubuntu
+FROM condaforge/mambaforge
+
+# Choosing the noninteractive mode to avoid all the input during docker image build
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt update
+# install compilers and stuff for opencv
+RUN apt install -y build-essential libgl1 libgl1-mesa-glx libxcursor1 libglib2.0-dev
+RUN apt install -y htop vim nano tmux git rsync wget
+
+# install packages which makes downloading (from collaborators) faster
+RUN apt install -y aria2
 
 ENV PATH="/opt/conda/bin:${PATH}"
 ARG PATH="/opt/conda/bin:${PATH}"
-
-# install miniconda
-RUN wget \
-    https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda\
-    && rm -f Miniconda3-latest-Linux-x86_64.sh 
 
 RUN conda config --set always_yes yes
 RUN conda update --yes conda
 
 # create caiman env
-# RUN conda install mamba -n base -c conda-forge
-RUN conda create -n caiman
+RUN conda remove -n caiman --all
 # install packages
-RUN conda env create -f environment.yml -n caiman
+RUN wget https://raw.githubusercontent.com/rob-the-bot/washu_hpc/main/caiman_docker/environment.yml
+RUN conda env create -f environment.yml
 # Make RUN commands use the new environment:
 SHELL ["conda", "run", "-n", "caiman", "/bin/bash", "-c"]
