@@ -18,5 +18,3 @@ RUN conda remove -n caiman --all
 # install packages
 RUN wget https://raw.githubusercontent.com/rob-the-bot/washu_hpc/main/caiman_docker/environment.yml
 RUN mamba env create -f environment.yml
-# Make RUN commands use the new environment:
-SHELL ["conda", "run", "-n", "caiman", "/bin/bash", "-c"]
