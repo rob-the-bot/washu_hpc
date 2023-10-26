@@ -2,6 +2,7 @@ name: caiman
 channels:
 - conda-forge
 dependencies:
+- python >=3.10
 - caiman
 - shapely
 - cvxpy
