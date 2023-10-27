@@ -11,10 +11,7 @@ RUN apt install -y htop vim nano tmux git rsync wget
 # install packages which makes downloading (from collaborators) faster
 RUN apt install -y aria2
 
-# conda stuff
-RUN conda config --set always_yes yes
-# create caiman env
-RUN conda remove -n caiman --all
-# install packages
+# download env config file
 RUN wget https://raw.githubusercontent.com/rob-the-bot/washu_hpc/main/caiman_docker/environment.yml
+# create caiman env
 RUN mamba env create -f environment.yml
