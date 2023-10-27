@@ -3,7 +3,7 @@ channels:
 - conda-forge
 dependencies:
 - python>=3.10
-- caiman==1.9.16
+- caiman
 - shapely
 - cvxpy
 - natsort
