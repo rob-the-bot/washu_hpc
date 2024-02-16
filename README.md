@@ -5,6 +5,6 @@
 - ubuntu:gpu
 - ibamr for computational fluid dynamics
 - MATLAB
-- [ants](ants/Dockerfile) for 
-- [openpose](openpose/Dockerfile) for human pose estimation
-- [vapoursynth](vapoursynth/Dockerfile) for preprocessing videos
+- [ants](ants_docker/Dockerfile) for image registration
+- [openpose](openpose_docker/Dockerfile) for human pose estimation
+- [vapoursynth](vapoursynth_docker/Dockerfile) for preprocessing videos
