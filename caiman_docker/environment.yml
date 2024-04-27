@@ -1,7 +1,6 @@
 name: caiman
 channels:
 - conda-forge
-- anaconda
 dependencies:
 - pip
 - caiman==1.10.4
