@@ -1,10 +1,10 @@
 name: caiman
 channels:
 - conda-forge
+- anaconda
 dependencies:
-- python>=3.10
+- pip
 - caiman
-- av
 - shapely
 - cvxpy
 - natsort
@@ -12,29 +12,25 @@ dependencies:
 - ffmpeg-python
 - python-igraph
 - jupyterlab
-- jupyterlab-git
 - nd2reader
 - chart-studio
 - plotly
 - pytables
 - openpyxl
-- jupyterlab_code_formatter
 - black
 - isort
 - pynrrd
-- lmfit
 - numba
 - llvmlite
-- autograd 
+- autograd
 - oasis-deconv
 - nibabel
 - webcolors
 - scikit-spatial
-- emcee
-- dtw-python
-- dtaidistance
-- pip
-
+- aicsimageio
 - pip:
   - antspyx
   - nd2
+  - aicspylibczi>=3.1.1
+  - fsspec>=2022.8.0
+  - git+https://github.com/ahwillia/netrep.git
