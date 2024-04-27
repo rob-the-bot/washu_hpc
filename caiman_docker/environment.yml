@@ -4,7 +4,7 @@ channels:
 - anaconda
 dependencies:
 - pip
-- caiman
+- caiman==1.10.4
 - shapely
 - cvxpy
 - natsort
