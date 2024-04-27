@@ -1,4 +1,4 @@
-FROM condaforge/mambaforge
+FROM condaforge/miniforge3
 
 # Choosing the noninteractive mode to avoid all the input during docker image build
 ENV DEBIAN_FRONTEND noninteractive
