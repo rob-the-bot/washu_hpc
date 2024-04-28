@@ -27,9 +27,9 @@ dependencies:
 - webcolors
 - scikit-spatial
 - aicsimageio
-- jupyter_contrib_nbextensions
 - pip:
   - antspyx
+  - jupyter_contrib_nbextensions
   - nd2
   - aicspylibczi>=3.1.1
   - fsspec>=2022.8.0
