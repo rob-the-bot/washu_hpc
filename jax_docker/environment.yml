@@ -10,6 +10,6 @@ dependencies:
 - seaborn
 - pip
 - pip:
-  - jax[cuda11_pip]==0.4.25 # last version with cuda11 support
+  - jax[cuda11_pip]==0.4.7+cuda11.cudnn82 # last version with cuda11.cudnn82 support
   - numpyro
   - -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
