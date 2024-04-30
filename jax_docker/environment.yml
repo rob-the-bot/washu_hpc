@@ -1,0 +1,13 @@
+name: jaxenv
+channels:
+- conda-forge
+dependencies:
+- numpy
+- scipy
+- ipython
+- jupyterlab
+- ipywidgets
+- seaborn
+- pip
+- jax
+- numpyro
