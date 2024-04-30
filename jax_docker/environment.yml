@@ -9,4 +9,7 @@ dependencies:
 - ipywidgets
 - seaborn
 - pip
-- numpyro
+- pip:
+  - jax[cuda11_pip]==0.4.25 # last version with cuda11 support
+  - numpyro
+  - -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
