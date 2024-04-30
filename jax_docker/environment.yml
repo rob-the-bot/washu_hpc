@@ -1,0 +1,15 @@
+name: jaxenv
+channels:
+- conda-forge
+dependencies:
+- numpy
+- scipy
+- ipython
+- jupyterlab
+- ipywidgets
+- seaborn
+- pip
+- pip:
+  - jax[cuda11_pip]
+  - numpyro
+  - --extra-index-url https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
