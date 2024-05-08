@@ -2,12 +2,16 @@ name: jaxenv
 channels:
 - conda-forge
 dependencies:
-- numpy
-- scipy
 - ipython
 - jupyterlab
 - ipywidgets
 - seaborn
+- tqdm
+- scikit-learn
+- h5py
+- nd2reader
 - pip
-- jax
-- numpyro
+- pip:
+  - graphviz
+  - jax[cpu]
+  - numpyro[cpu]
