@@ -1,0 +1,26 @@
+name: rl
+
+channels:
+- conda-forge
+- pytorch
+- nvidia
+
+dependencies:
+- gymnasium-all
+- h5py
+- tqdm
+- ipywidgets
+- jupyterlab
+- pandas
+- pytables
+- scikit-learn
+- plotly
+- seaborn
+- pytorch
+- torchvision
+- torchaudio
+- pytorch-cuda=11.8
+- pip
+
+- pip:
+  - stable-baselines3[extra]
