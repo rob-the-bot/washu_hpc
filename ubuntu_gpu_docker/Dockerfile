@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.2-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
 # Choosing the noninteractive mode to avoid all the input during docker image build
 ENV DEBIAN_FRONTEND noninteractive
 
