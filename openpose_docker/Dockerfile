@@ -1,3 +1,4 @@
+# modified from https://github.com/esemeniuc/openpose-docker
 FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -33,6 +34,11 @@ RUN cmake \
     -D DOWNLOAD_BODY_25_MODEL=OFF \
     -D BUILD_PYTHON=OFF \
     -D USE_CUDNN=ON \
+    # specify CUDA architecture
+    # https://github.com/CMU-Perceptual-Computing-Lab/openpose/issues/2075
+    -D CUDA_ARCH=Manual \
+    -D CUDA_ARCH_BIN="70 80" \
+    -D CUDA_ARCH_PTX="80" \
     -D CMAKE_BUILD_TYPE=Release \
     -D DOWNLOAD_HAND_MODEL=OFF \
     -D DOWNLOAD_FACE_MODEL=OFF \
