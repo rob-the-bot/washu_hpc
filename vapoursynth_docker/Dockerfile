@@ -1,4 +1,4 @@
-FROM fr3akyphantom/vapoursynth-av1an-rt
+FROM --platform=linux/amd64/v3 fr3akyphantom/vapoursynth-av1an-rt AS build
 
 # refresh mirror lists
 RUN paru -Sy --repo
