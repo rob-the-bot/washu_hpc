@@ -9,4 +9,4 @@ RUN apt install -y build-essential libgl1 libgl1-mesa-glx libxcursor1 libglib2.0
 RUN apt install -y htop vim nano tmux git rsync wget
 
 # install useful packages
-RUN apt install -y openssh-client aria2
+RUN apt install -y openssh-client aria2 p7zip-full p7zip-rar
