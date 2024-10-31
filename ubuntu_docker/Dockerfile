@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update
 # install compilers and stuff for opencv
 RUN apt install -y build-essential libgl1 libgl1-mesa-glx libxcursor1 libglib2.0-dev
+# install useful packages
 RUN apt install -y htop vim nano tmux git rsync wget
 
 # install package which makes downloading (from collaborators) faster
