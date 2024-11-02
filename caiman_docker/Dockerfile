@@ -1,6 +1,3 @@
-FROM d0ckaaa/mamba
-
-# download env config file
-RUN wget https://raw.githubusercontent.com/rob-the-bot/washu_hpc/main/caiman_docker/environment.yml
+FROM d0ckaaa/ubuntu
 # create caiman env
-RUN mamba env create -f environment.yml
+RUN mamba env create --file=https://raw.githubusercontent.com/rob-the-bot/washu_hpc/main/caiman_docker/environment.yml
