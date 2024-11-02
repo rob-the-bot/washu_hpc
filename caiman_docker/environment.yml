@@ -28,6 +28,7 @@ dependencies:
 - tabulate
 - scikit-spatial
 - aicsimageio
+- graph-tool # not available on Windows
 - pip:
   - antspyx
   - nd2
