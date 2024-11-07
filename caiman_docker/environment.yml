@@ -4,6 +4,7 @@ channels:
 dependencies:
 - pip
 - caiman>=1.11
+- av
 - shapely
 - cvxpy
 - natsort
