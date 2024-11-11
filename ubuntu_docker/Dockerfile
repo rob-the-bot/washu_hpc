@@ -14,6 +14,9 @@ RUN apt install -y aria2
 # install 7z
 RUN apt install -y p7zip-full p7zip-rar
 
+# install blas and lapack
+RUN apt install -y libblas-dev liblapack-dev
+
 # add conda, from https://github.com/conda-forge/miniforge-images/blob/master/ubuntu/Dockerfile
 ARG MINIFORGE_NAME=Miniforge3
 ARG MINIFORGE_VERSION=24.9.0-0
