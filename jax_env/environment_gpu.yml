@@ -3,7 +3,7 @@ channels:
 - conda-forge
 dependencies:
 - python
-- numpy
+- numpy<2
 - ipython
 - jupyterlab
 - ipywidgets
@@ -12,6 +12,8 @@ dependencies:
 - scikit-learn
 - h5py
 - nd2reader
+- optax
+- blackjax
 - pip
 - pip:
   - graphviz
