@@ -59,7 +59,7 @@ RUN apt-get update > /dev/null && \
         echo '. ${CONDA_DIR}/etc/.mambaforge_deprecation.sh' >> ~/.bashrc; \
     fi
 
-COPY ubuntu/mambaforge_deprecation.sh ${CONDA_DIR}/etc/.mambaforge_deprecation.sh
+# COPY ubuntu/mambaforge_deprecation.sh ${CONDA_DIR}/etc/.mambaforge_deprecation.sh
 
 ENTRYPOINT ["tini", "--"]
 CMD [ "/bin/bash" ]
