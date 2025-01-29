@@ -6,7 +6,7 @@ RUN apt update
 # install compilers and stuff for opencv
 RUN apt install -y build-essential libgl1 libgl1-mesa-glx libxcursor1 libglib2.0-dev
 # install useful packages
-RUN apt install -y htop vim nano tmux git rsync wget
+RUN apt install -y htop vim nano tmux git rsync wget curl
 
 # install package which makes downloading (from collaborators) faster
 RUN apt install -y aria2
