@@ -19,7 +19,7 @@ RUN apt install -y libblas-dev liblapack-dev
 
 # add conda, from https://github.com/conda-forge/miniforge-images/blob/master/ubuntu/Dockerfile
 ARG MINIFORGE_NAME=Miniforge3
-ARG MINIFORGE_VERSION=24.9.2-0
+ARG MINIFORGE_VERSION=24.11.3-0
 ARG TARGETPLATFORM
 
 ENV CONDA_DIR=/opt/conda
