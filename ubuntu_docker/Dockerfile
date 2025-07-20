@@ -19,7 +19,7 @@ RUN apt install -y libblas-dev liblapack-dev
 
 # add conda, from https://github.com/conda-forge/miniforge-images/blob/master/ubuntu/Dockerfile
 ARG MINIFORGE_NAME=Miniforge3
-ARG MINIFORGE_VERSION=24.11.3-0
+ARG MINIFORGE_VERSION=25.3.0-3
 ARG TARGETPLATFORM
 
 ENV CONDA_DIR=/opt/conda
@@ -53,13 +53,7 @@ RUN apt-get update > /dev/null && \
     find ${CONDA_DIR} -follow -type f -name '*.pyc' -delete && \
     conda clean --force-pkgs-dirs --all --yes  && \
     echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> /etc/skel/.bashrc && \
-    echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> ~/.bashrc && \
-    if [ ${MINIFORGE_NAME} = "Mambaforge"* ]; then \
-        echo '. ${CONDA_DIR}/etc/.mambaforge_deprecation.sh' >> /etc/skel/.bashrc && \
-        echo '. ${CONDA_DIR}/etc/.mambaforge_deprecation.sh' >> ~/.bashrc; \
-    fi
-
-# COPY ubuntu/mambaforge_deprecation.sh ${CONDA_DIR}/etc/.mambaforge_deprecation.sh
+    echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> ~/.bashrc
 
 ENTRYPOINT ["tini", "--"]
 CMD [ "/bin/bash" ]
