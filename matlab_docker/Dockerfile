@@ -1,4 +1,4 @@
-FROM gcr.io/ris-registry-shared/matlab
+FROM ghcr.io/washu-it-ris/ris-thpc:runtime
 
 # Choosing the noninteractive mode to avoid all the input during docker image build
 ENV DEBIAN_FRONTEND noninteractive
