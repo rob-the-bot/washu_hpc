@@ -7,7 +7,7 @@ RUN apt update
 # install compilers and stuff for opencv
 RUN apt install -y build-essential libgl1 libgl1-mesa-glx libxcursor1 libglib2.0-dev
 # install useful packages
-RUN apt install -y htop vim nano tmux git rsync wget
+RUN apt install -y htop vim nano tmux git rsync wget curl
 
 # install package which makes downloading (from collaborators) faster
 RUN apt install -y aria2
@@ -20,7 +20,7 @@ RUN apt install -y libblas-dev liblapack-dev
 
 # add conda, from https://github.com/conda-forge/miniforge-images/blob/master/ubuntu/Dockerfile
 ARG MINIFORGE_NAME=Miniforge3
-ARG MINIFORGE_VERSION=24.9.2-0
+ARG MINIFORGE_VERSION=25.3.0-3
 ARG TARGETPLATFORM
 
 ENV CONDA_DIR=/opt/conda
@@ -54,13 +54,7 @@ RUN apt-get update > /dev/null && \
     find ${CONDA_DIR} -follow -type f -name '*.pyc' -delete && \
     conda clean --force-pkgs-dirs --all --yes  && \
     echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> /etc/skel/.bashrc && \
-    echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> ~/.bashrc && \
-    if [ ${MINIFORGE_NAME} = "Mambaforge"* ]; then \
-        echo '. ${CONDA_DIR}/etc/.mambaforge_deprecation.sh' >> /etc/skel/.bashrc && \
-        echo '. ${CONDA_DIR}/etc/.mambaforge_deprecation.sh' >> ~/.bashrc; \
-    fi
-
-# COPY ubuntu/mambaforge_deprecation.sh ${CONDA_DIR}/etc/.mambaforge_deprecation.sh
+    echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> ~/.bashrc
 
 ENTRYPOINT ["tini", "--"]
 CMD [ "/bin/bash" ]
