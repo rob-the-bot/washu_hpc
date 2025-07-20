@@ -16,7 +16,7 @@ RUN apt install -y p7zip-full p7zip-rar
 
 # add conda, from https://github.com/conda-forge/miniforge-images/blob/master/ubuntu/Dockerfile
 ARG MINIFORGE_NAME=Miniforge3
-ARG MINIFORGE_VERSION=24.11.3-0
+ARG MINIFORGE_VERSION=25.3.0-3
 ARG TARGETPLATFORM
 
 ENV CONDA_DIR=/opt/conda
