@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu
 # Choosing the noninteractive mode to avoid all the input during docker image build
 ENV DEBIAN_FRONTEND noninteractive
 
