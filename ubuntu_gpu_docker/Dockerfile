@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update
 # install compilers and stuff for opencv
-RUN apt install -y build-essential libgl1 libgl1-mesa-glx libxcursor1 libglib2.0-dev
+RUN apt install -y build-essential cmake libgl1 libglx-mesa0 libxcursor1 libglib2.0-dev
 # install useful packages
 RUN apt install -y htop vim nano tmux git rsync wget curl
 
@@ -12,11 +12,14 @@ RUN apt install -y htop vim nano tmux git rsync wget curl
 RUN apt install -y aria2
 
 # install 7z
-RUN apt install -y p7zip-full p7zip-rar
+RUN apt install -y p7zip-full
+
+# install blas and lapack
+RUN apt install -y libblas-dev liblapack-dev
 
 # add conda, from https://github.com/conda-forge/miniforge-images/blob/master/ubuntu/Dockerfile
 ARG MINIFORGE_NAME=Miniforge3
-ARG MINIFORGE_VERSION=26.5.3-0
+ARG MINIFORGE_VERSION=26.7.2-0
 ARG TARGETPLATFORM
 
 ENV CONDA_DIR=/opt/conda
